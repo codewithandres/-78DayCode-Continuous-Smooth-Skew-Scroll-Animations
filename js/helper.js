@@ -6,18 +6,20 @@ class SmoothScollConfig {
 	static ease = 0.15;
 
 	static lerp(current, target) {
-		const distanceBetewen = target - current;
-		const distanceToTravel = distanceBetewen * this.ease;
+		const distanceBetween = target - current;
+		const distanceToTravel = distanceBetween * this.ease;
 
 		return current + distanceToTravel;
 	}
 
 	static getSkew(target, current) {
 		const diff = target - current;
-		const aceleration = diff / window.innerWidth;
-		const velocity = +aceleration;
 
-		return velocity * 1.5;
+		const acceleration = diff / window.innerWidth;
+
+		const velocity = +acceleration;
+
+		return velocity * 7.5;
 	}
 }
 

@@ -5,12 +5,12 @@ const PADDING = 20;
 const ELEMENT_ZIZE = 170;
 
 window.addEventListener('load', () => {
-	const items = select('.item');
+	const items = select('.items');
 	const circle = select('.cursor-circle');
 
-	const scroll = { current: 0, target: 0 };
-
 	const mouseEvent = { clientX: 0, clientY: 0 };
+
+	const scroll = { current: 0, target: 0 };
 
 	const generateList = () => {
 		DATA.forEach((d, index) => {
@@ -41,14 +41,16 @@ window.addEventListener('load', () => {
 
 	const list = selectAll('.text-container');
 
-	const updateTarget = (event) => (scroll.target += event.deltaY);
+	const updateTarget = (event) => {
+		scroll.target += event.deltaY;
+	};
 
 	const updateMouseEvent = (event) => {
 		mouseEvent.clientX = event.clientX;
 		mouseEvent.clientY = event.clientY;
 	};
 
-	document.addEventListener('wheel', updateTarget);
+	document.addEventListener('mousewheel', updateTarget);
 
 	document.addEventListener('mousemove', updateMouseEvent);
 
