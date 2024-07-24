@@ -49,8 +49,8 @@ body {
 	border-radius: 50%;
 	border: 3px solid hsl(0, 100%, 52%);
 	transition: padding 0.3s;
-	/*visibility: hidden;
-	opacity: 0;*/
+	visibility: hidden;
+	opacity: 0;
 	&.active {
 		padding: 60px;
 	}
@@ -83,4 +83,14 @@ img,
 	line-height: 1;
 	color: transparent;
 	-webkit-text-stroke: 1px hsla(0, 0%, 0%, 0.5);
+}
+
+.blank {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background-color: var(--c-white);
+	width: 100%;
+	height: 100%;
 }

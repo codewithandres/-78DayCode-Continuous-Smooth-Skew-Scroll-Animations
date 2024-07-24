@@ -2,8 +2,12 @@ const select = (element) => document.querySelector(element);
 const selectAll = (element) => document.querySelectorAll(element);
 const create = (element) => document.createElement(element);
 
+const getRandonNumber = (len) => Math.floor(Math.random() * len);
+
+const getRandomNunberRange = (min, max) => Math.random() * (min - max) + min;
+
 class SmoothScollConfig {
-	static ease = 0.15;
+	static ease = 0.1;
 
 	static lerp(current, target) {
 		const distanceBetween = target - current;
@@ -23,4 +27,11 @@ class SmoothScollConfig {
 	}
 }
 
-export { select, selectAll, create, SmoothScollConfig };
+export {
+	select,
+	selectAll,
+	create,
+	SmoothScollConfig,
+	getRandomNunberRange,
+	getRandonNumber,
+};
